@@ -6,7 +6,7 @@ function ContactForm(props) {
   return (
     <>
       <ReusableForm
-        formSubmissionHandler={handleSendMessageToEmail}
+        formSubmissionHandler={handleSendingMessageToEmail}
         buttonText='Contact Chelsea' />
     </>
   );
