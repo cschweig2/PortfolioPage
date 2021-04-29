@@ -1,18 +1,16 @@
-# Who Got The Booch? Kombucha Taproom
+# Portfolio Webpage
 
-### Created: 2.12.2021 | Last Updated: 2.21.2021
+### Created: 4.29.2021 | Last Updated: 4.29.2021
 
 ## 📊 Project Overview
 
 ### **Description**
 
-This application displays the landing page for Got The Booch Kombucha Taproom. A user may add, view, and delete kegs. A user may also purchase a pint from a keg.
+This web app is an online portfolio showcasing my coding projects.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ### **Component Diagram**
-
-[![components.jpg](https://i.postimg.cc/WzP05LnX/components.jpg)](https://postimg.cc/HcBJLNFy)
 
 ### **Technologies Used**
 
@@ -34,14 +32,14 @@ To open the project on your local machine, you will need to download and install
 
 ### **Clone**
 1. Follow above steps to install necessary software.
-2. Open web browser and go to https://github.com/cschweig2/kombucha-taproom.
+2. Open web browser and go to https://github.com/cschweig2/portfoliopage.
 3. After clicking the green "code" button, you can copy the URL for the repository.
 4. Open a terminal window, such as Command Prompt or Git Bash, and navigate to the folder you wish to keep this project in.<br>
-  4a. Type in this command: `git clone` , followed by the URL you just copied. The full command should look like this: `git clone https://github.com/cschweig2/kombucha-taproom` .
+  4a. Type in this command: `git clone` , followed by the URL you just copied. The full command should look like this: `git clone https://github.com/cschweig2/portfoliopage` .
 5. View the code on your favorite text editor.
 
 ### **Download**
-1. Click [here](https://github.com/cschweig2/kombucha-taproom) to view project repository.
+1. Click [here](https://github.com/cschweig2/portfoliopage) to view project repository.
 2. Click "Clone or download" to find the "Download ZIP" option.
 3. Click "Download ZIP" and extract files.
 4. Open the project in a text editor by clicking on any file in the project folder.
