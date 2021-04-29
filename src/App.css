@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;700&display=swap');
+
 .App {
   text-align: center;
 }
@@ -38,13 +40,15 @@
 }
 
 body {
-  background-image: url('./img/taps.jpg');
+  background-image: url('./img/backgroundPhoto.png');
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 #main-background {
   display: block;
-  background-color: wheat;
-  opacity: 70%;
+}
+
+#header {
+  font-family: 'Raleway', sans-serif;
 }
