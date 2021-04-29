@@ -23,12 +23,12 @@ class Control extends React.Component {
   handleClick = () => {
     if (this.state.resumeVisibleOnPage) {
       this.setState({
-        resumeVisibleOnPage: !prevState.resumeVisibleOnPage
+        resumeVisibleOnPage: false
       });
     } else if (this.state.blogVisibleOnPage) {
-      this.setState(prevState => ({
-        blogVisibleOnPage: !prevState.blogVisibleOnPage
-      }));
+      this.setState({
+        blogVisibleOnPage: false
+      });
     }
   }
 
@@ -51,13 +51,20 @@ class Control extends React.Component {
     } else {
       currentVisibleState = <Main />
     }
-
-    return (
-      <>
-        {currentVisibleState}
-        <button onClick={this.handleClick}>{buttonText}</button>
-      </>
-    );
+    if (!this.state.formVisibleOnPage && !this.state.blogVisibleOnPage && !this.state.resumeVisibleOnPage) {
+      return (
+        <>
+          {currentVisibleState}
+        </>
+      );
+    } else {
+      return (
+        <>
+          {currentVisibleState}
+          <button onClick={this.handleClick}>{buttonText}</button>
+        </>
+      );
+    }
   }
 
 }
