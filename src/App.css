@@ -47,8 +47,19 @@ body {
 
 #main-background {
   display: block;
+  margin-top: 10%;
+  margin-bottom: 20%;
 }
 
-#header {
+.navbar-brand {
   font-family: 'Raleway', sans-serif;
+}
+
+.main-text {
+  margin-top: 40px;
+  font-family: 'Raleway', sans-serif;
+}
+
+.card {
+  padding: 20px;
 }
