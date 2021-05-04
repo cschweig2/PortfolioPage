@@ -40,26 +40,54 @@
 }
 
 body {
-  background-image: url('./img/backgroundPhoto.png');
+  background: url('./img/backgroundPhoto.png') no-repeat center center fixed;
   background-size: cover;
-  background-repeat: no-repeat;
 }
 
-#main-background {
+/* #main-background {
   display: block;
   margin-top: 10%;
   margin-bottom: 20%;
-}
+} */
 
 .navbar-brand {
   font-family: 'Raleway', sans-serif;
 }
 
 .main-text {
-  margin-top: 40px;
+  margin-top: 200px;
   font-family: 'Raleway', sans-serif;
 }
 
 .card {
   padding: 20px;
+}
+
+#resume-image {
+  padding-top: 50px;
+  padding-bottom: 100px;
+}
+
+#footer-text {
+  font-family: 'Raleway', sans-serif;
+}
+
+.footer {
+  height: calc(100% - 60px);
+}
+
+#component-header-text {
+  font-family: 'Raleway', sans-serif;
+  margin-top: 20px;
+  background-color: white;
+}
+
+.btn-info {
+  background-color: rgb(148, 196, 178);
+  border: rgb(148, 196, 178);
+}
+
+.contact-form {
+  margin: 100px;
+  margin-bottom: 100px;
 }
