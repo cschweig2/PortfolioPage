@@ -1,26 +1,14 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
-function Keg(props) {
+function Resume() {
   return (
     <>
-      <div onClick = {() => props.whenKegClicked(props.id)}>
-        <h2>{props.brand} - {props.name}</h2>
-        <h3>{props.flavor}</h3>
-        <h4>{props.price}</h4>
-        <hr />
+      <h1 id='component-header-text'>Resume</h1>
+      <div className='container'>
+        <img src={require('../img/Resume.png')} alt='image of resume' id='resume-image' />
       </div>
     </>
   );
 }
 
-Keg.propTypes = {
-  name: PropTypes.string.isRequired,
-  brand: PropTypes.string.isRequired,
-  flavor: PropTypes.string.isRequired,
-  pintsLeft: PropTypes.number,
-  price: PropTypes.number.isRequired,
-  whenKegClicked: PropTypes.func
-};
-
-export default Keg;
+export default Resume;
