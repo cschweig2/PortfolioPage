@@ -5,7 +5,7 @@ function Resume() {
     <>
       <h1 id='component-header-text'>Resume</h1>
       <div className='container'>
-        <img src={require('../img/Resume.png')} alt='image of resume' id='resume-image' />
+        <img src={require('../img/Resume.png')} alt='resume' id='resume-image' />
       </div>
     </>
   );
