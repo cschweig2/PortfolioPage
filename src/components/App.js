@@ -2,7 +2,6 @@ import './../App.css';
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Header from './Header';
-// import Control from './Control';
 import Resume from './Resume';
 import ContactForm from './ContactForm';
 import Projects from './Projects';
