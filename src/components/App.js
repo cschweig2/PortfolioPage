@@ -2,7 +2,7 @@ import './../App.css';
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Header from './Header';
-import Control from './Control';
+// import Control from './Control';
 import Resume from './Resume';
 import ContactForm from './ContactForm';
 import Projects from './Projects';
@@ -21,12 +21,11 @@ function App() {
         <Route path='/resume' component={Resume}/>
         <Route path='/contact' component={ContactForm}/>
         <Route path='/projects' component={Projects}/>
-        <Route path='/home' component={Main}/>
+        <Route path='/' component={Main}/>
       </Switch>
       <Footer />
     </div>
   );
 }
-// doesn't route immediately back to home 
 
 export default App;
