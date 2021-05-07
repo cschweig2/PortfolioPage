@@ -6,10 +6,14 @@
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.6.3",
+    "axios": "^0.21.1",
     "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
     "dotenv": "^6.2.0",
     "emailjs-com": "^2.6.4",
     "express": "^4.17.1",
+    "express-http-proxy": "^1.6.2",
+    "multiparty": "^4.2.2",
     "nodemailer": "^6.6.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
@@ -40,5 +44,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/dotenv": "^8.2.0"
   }
 }
