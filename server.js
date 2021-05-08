@@ -2,7 +2,8 @@ const nodemailer = require('nodemailer');
 const express = require('express');
 const app = express();
 const cors = require('cors');
-require('dotenv').config()
+const dotenv = require('dotenv');
+dotenv.config();
 const GMAIL_USER = process.env.GMAIL_USER;
 const GMAIL_PASS = process.env.GMAIL_PASS;
 const port = 3001;
@@ -19,7 +20,7 @@ const smtpTrans = nodemailer.createTransport({
     port: 587,
     auth: {
         user: 'chelraebecker@gmail.com',
-        pass: `${process.env.GMAIL_PASS}`
+        pass: '0nward&Upward@'
     }
 });
 
@@ -34,18 +35,19 @@ smtpTrans.verify( function (error, success) {
 // POST route from contact form
 app.post('/contact', cors(), (req, res, next) => {
 
-    let firstName = req.firstName;
-    let lastName = req.lastName;
-    let email = req.email;
-    let phone = req.phone;
-    let message = req.message;
-    console.log(firstName);
-
     let mail = {
-        from: `${firstName} ${lastName}`,
+        from: `${req.body.firstName} ${req.body.lastName}`,
         to: 'chelraebecker@gmail.com',
         subject: 'New message from portfolio website!',
-        text: `Message: ${message} /n Email: ${email} /n Phone: ${phone}`
+        html: `
+        <h2>Message</h2>
+        <ul>
+            <li>Name: ${req.body.firstName} ${req.body.lastName}</li>
+            <li>Email: ${req.body.email}</li>
+            <li>Phone: ${req.body.phone}</li>
+            <li>Message: ${req.body.message}</li>
+        </ul>
+        `
     }
     console.log(mail);
 
