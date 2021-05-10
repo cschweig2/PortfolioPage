@@ -14,40 +14,27 @@ class ContactForm extends React.Component {
     };
   };
 
-  onFirstNameChange(event) {
-    this.setState({firstName: event.target.value})
-  };
-
-  onLastNameChange(event) {
-    this.setState({lastName: event.target.value})
-  };
-
-  onEmailChange(event) {
-    this.setState({email: event.target. value})
-  };
-
-  onPhoneChange(event) {
-    this.setState({phone: event.target. value})
-  };
-
-  onMessageChange(event) {
-    this.setState({message: event.target. value})
+  onInputChange = (event) => {
+    const { name, value } = event.target;
+    this.setState({
+      ...this.state,
+      [name] : value
+    });
   };
 
   submitEmail(e){
     e.preventDefault();
-    axios({
-      method: 'POST',
-      url: 'http://localhost:3001/contact',
-      data: this.state
-    }).then((response) => {
-      if (response.status === 'success') {
-        alert('message sent!');
-        this.resetForm();
-      } else {
-        alert('message failed!');
-      }
-    });
+    console.log(this.state);
+    axios
+      .post("http://localhost:3001/contact", this.state)
+      .then((response) => {
+        if (response.status === 'success') {
+          alert('message sent!');
+          this.resetForm();
+        } else {
+          alert('message failed!');
+        }
+      });
   };
 
   resetForm() {
@@ -65,9 +52,9 @@ class ContactForm extends React.Component {
                 <input
                   type='text'
                   name='firstName'
-                  placeholder='First Name' 
+                  placeholder='First Name'
                   className='form-control'
-                  onChange={this.onFirstNameChange.bind(this)}
+                  onChange={this.onInputChange.bind(this)}
                   value={this.state.firstName}
                   required />
               </div>
@@ -75,9 +62,9 @@ class ContactForm extends React.Component {
                 <input
                   type='text'
                   name='lastName'
-                  placeholder='Last Name' 
+                  placeholder='Last Name'
                   className='form-control'
-                  onChange={this.onLastNameChange.bind(this)}
+                  onChange={this.onInputChange.bind(this)}
                   value={this.state.lastName}
                   required />
               </div>
@@ -85,9 +72,9 @@ class ContactForm extends React.Component {
                 <input
                   type='text'
                   name='email'
-                  placeholder='Email' 
+                  placeholder='Email'
                   className="form-control"
-                  onChange={this.onEmailChange.bind(this)}
+                  onChange={this.onInputChange.bind(this)}
                   value={this.state.email}
                   required />
               </div>
@@ -95,9 +82,9 @@ class ContactForm extends React.Component {
                 <input
                   type='text'
                   name='phone'
-                  placeholder='Phone' 
+                  placeholder='Phone'
                   className="form-control"
-                  onChange={this.onPhoneChange.bind(this)}
+                  onChange={this.onInputChange.bind(this)}
                   value={this.state.phone}
                   required />
               </div>
@@ -107,7 +94,7 @@ class ContactForm extends React.Component {
                   name='message'
                   placeholder='Message'
                   className='form-control'
-                  onChange={this.onMessageChange.bind(this)}
+                  onChange={this.onInputChange.bind(this)}
                   value={this.state.message}
                   required />
               </div>
