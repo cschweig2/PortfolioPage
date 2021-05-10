@@ -3,6 +3,7 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const dotenv = require('dotenv');
+const bodyParser = require('body-parser');
 dotenv.config();
 const GMAIL_USER = process.env.GMAIL_USER;
 const GMAIL_PASS = process.env.GMAIL_PASS;
@@ -12,6 +13,9 @@ app.listen(port, () => {
     console.log(`example app listening at http://localhost:${port}`);
 });
 
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
 app.options('/contact', cors());
 
 // instantiate the SMTP server
@@ -20,7 +24,7 @@ const smtpTrans = nodemailer.createTransport({
     port: 587,
     auth: {
         user: 'chelraebecker@gmail.com',
-        pass: '0nward&Upward@'
+        pass: GMAIL_PASS
     }
 });
 
@@ -34,9 +38,9 @@ smtpTrans.verify( function (error, success) {
 
 // POST route from contact form
 app.post('/contact', cors(), (req, res, next) => {
-
+    res.set('content-type', 'application/json');
     let mail = {
-        from: `${req.body.firstName} ${req.body.lastName}`,
+        from: 'Sender',
         to: 'chelraebecker@gmail.com',
         subject: 'New message from portfolio website!',
         html: `
